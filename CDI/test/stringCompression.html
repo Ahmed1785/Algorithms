@@ -1,0 +1,48 @@
+<script>
+    function stringCompression(str){
+        if(str.length == 1){
+            return str;
+        }
+        var count = 1;
+        var previousChar = str.charAt(0)
+        var strLength = str.length;
+        newStr = ""
+        for(var i = 1; i<strLength; i++){
+            var currentChar = str[i];
+            if(previousChar === currentChar){
+                count++
+            } else if (count === 1){
+                newStr += previousChar;
+                previousChar = currentChar;
+            } else {
+                newStr += previousChar + count;
+                previousChar = currentChar;
+                count = 1;
+            }
+        }
+        if (count === 1){
+            newStr += currentChar;
+        }else{
+            newStr += currentChar + count
+        }
+        return newStr;
+    }
+    //console.log(stringCompression("hhhheeeeeellllllooooooo"))
+
+    function Compressor(str){
+        var count = 1;
+        var output = ""
+        for(var i = 0; i < str.length; i++){
+            var c = str[i]
+            var next = str[i+1]
+            if(c == next){
+                count++
+            } else {
+                output += c + String(count)
+                count = 1;
+            }
+        }
+        return output.length < str.length ? output : str;
+    }
+    console.log(Compressor("hhhheeeeeellllllooooooo"))
+</script>

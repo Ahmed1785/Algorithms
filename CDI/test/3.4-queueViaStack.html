@@ -1,0 +1,28 @@
+<script>
+    function myQueue(data){
+        this.data = [];
+        var stack1 = [];
+        var stack2 = [];
+    }
+    myQueue.prototype.push = function(value){
+        this.data.unshift(value);
+    }
+    myQueue.prototype.pop = function(value){
+        this.data.pop();
+    }
+    myQueue.prototype.enqueue = function(value){
+        stack1.push(value)
+    }
+    myQueue.prototype.dequeue = function(value){
+        if(stack2.length === 0){
+            if(stack1.length === 0){
+                return "Cannot dequeue because queue is empty"
+            }
+            while(stack1.length > 0){
+                var p = stack1.pop()
+                stack2.push(p);
+            }
+        }
+        return stack2.pop;
+    }
+</script>

@@ -1,0 +1,25 @@
+<script>
+    function RansomNote(str1, str2){
+        // newStr = ""
+        longestStr = ""
+        shortestStr = ""
+        if(str1.length > str2.length){
+            longestStr = str1;
+            shortestStr = str2;
+        }else{
+            longestStr = str2;
+            shortestStr = str1;
+        }
+        for(var i = 0; i < shortestStr.length; i++){
+            // console.log(shortestStr[i])
+            for(var j = 0; j < longestStr.length; j++){
+                // console.log(longestStr[j])
+               if(longestStr[j] == shortestStr[i]){
+                   console.log("true")
+                }
+            }
+            console.log("false")
+        }
+    }
+    RansomNote("agfds", "abcdefg")
+</script>

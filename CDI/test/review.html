@@ -1,0 +1,60 @@
+<script>
+    function isUnique(str){
+        if(str.length == 1){
+            return true;
+        }
+        var hash = {}
+        for(var i = 0; i<str.length-1; i ++){
+            if(hash[str[i]]){
+                return false;
+            } else {
+                hash[str[i]] = true;
+            }
+        }
+        return true
+    }
+
+
+    function createPascalTriangle (numRows) {
+  var pascalTriangle = [];
+  
+  for (var i = 0; i < numRows; i++) { 
+    pascalTriangle[i] = new Array(i+1);
+    
+    for (var j = 0; j < i+1; j++) {            
+      if (j === 0 || j === i) {
+        pascalTriangle[i][j] = 1;
+      } else {
+        pascalTriangle[i][j] = pascalTriangle[i-1][j-1] + pascalTriangle[i-1][j];
+      }
+    }
+  }
+  
+  return pascalTriangle;
+}
+
+//console.table(createPascalTriangle(5));
+
+function PaliPermu(str){
+    var hash = {}
+    var count = 0;
+    for(var i = 0; i < str.length; i++){
+        var c = str[i]
+        if(c == " "){
+            continue
+        }
+        if(hash[c]){
+            delete hash[c]
+        } else {
+            hash[c] = true;
+        }
+        count++
+        }
+        if(count % 2 === 0){
+            return Object.keys(hash).length === 0
+        } else {
+            return Object.keys(hash).length === 1
+        }
+    }
+    console.log(PaliPermu("hello world"))
+</script>

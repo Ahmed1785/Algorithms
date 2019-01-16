@@ -1,0 +1,22 @@
+<script>
+    function listNode(val){
+        this.val = val; 
+        this.next = null;
+    }
+    function sll(){
+        this.head = null;
+    }
+    sll.prototype.findLoop = function(node){
+        var fast = this.head;
+        var slow = this.head;
+        while(fast){
+            fast = fast.next.next;
+            slow = slow.next;
+            if(fast = slow){
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+</script>

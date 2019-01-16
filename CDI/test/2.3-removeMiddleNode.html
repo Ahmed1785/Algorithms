@@ -1,0 +1,31 @@
+<script>
+    function listNode(val){
+        this.val = val;
+        this.next = null;
+    }
+    function sll(){
+        this.head = null;
+    }
+    sll.prototype.removeMiddle = function(node, nodeToDelete){
+        var addNode = new listNode(val);
+        if(!this.head){
+            this.head = addNode;
+            return this.head;
+        }
+        var prev = this.head;
+        var fast = this.head.next;
+        if(this.head.val == nodeToDelete){
+            this.head = fast;
+        }
+        while(fast != nodeToDelete){
+            prev = prev.next;
+            fast = fast.next;
+            if(fast.next == null){
+                prev.next = null;
+            } else {
+                prev.next = fast.next;
+            }
+        }
+        return head;
+    }
+</script>

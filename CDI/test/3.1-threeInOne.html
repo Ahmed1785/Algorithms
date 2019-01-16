@@ -1,0 +1,77 @@
+<script>
+    function threeInOne(){
+        var container = [];
+        var middleBottom = 0;
+        var middleTop = 0;
+    }
+    threeInOne.prototype.push1 = function(value){
+        this.container.unshift();
+        this.middleBottom++;
+        this.middleTop++;
+    }
+    threeInOne.prototype.push2 = function(value){
+        this.container.splice(this.middleBottom, 0, value);
+        this.middleTop++
+    }
+    threeInOne.prototype.push3 = function(value){
+        this.container.push(value);
+    }
+    threeInOne.prototype.pop1 = function(value){
+        if(this.container.isEmpty1()){
+            return undefined;
+        }
+        var answer = this.container.shift()
+        if(this.container > middleBottom){
+            middleBottom--;
+            middleTop--;
+        }
+        return answer;
+    }
+    threeInOne.prototype.pop2 = function(value){
+        if(this.container.isEmpty2()){
+            return undefined;
+        }
+        var answer = this.container[this.middleTop-1]
+        this.container.splice(this.middleTop-1, 1)
+        if(middleBottom < middleTop){
+            this.middleTop--;
+        }
+        return answer;
+    }
+    threeInOne.prototype.pop3 = function(value){
+        if(this.container.isEmpty3){
+            return undefined;
+        }
+        this.container.pop(value)
+    }
+    threeInOne.prototype.peek1 = function(value){
+        if(this.container.isEmpty1()){
+            return undefined;
+        }
+        var answer = this.container[this.middleBottom -1];
+        return answer;
+    }
+    threeInOne.prototype.peek2 = function(value){
+        if(this.container.isEmpty2()){
+            return undefined;
+        }
+        var answer = this.container[this.middleTop-1];
+        return answer;
+    }
+    threeInOne.prototype.peek3 = function(value){
+        if(this.container.isEmpty3()){
+            return undefined;
+        }
+        var answer = this.container[container.length-1]
+        return answer;
+    }
+    threeInOne.prototype.isEmpty1 = function(value){
+        return this.container.middleBottom === 0;
+    }
+    threeInOne.prototype.isEmpty2 = function(value){
+        return this.containter.middleBottom === this.container.middleTop;
+    }
+    threeInOne.prototype.isEmpty3 = function(value){
+        return this.container.middleTop === this.container.length;
+    }
+</script>

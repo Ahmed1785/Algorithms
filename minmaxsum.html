@@ -1,0 +1,14 @@
+<script>
+    function minmaxsum(arr){
+        var min, max, sum, temp_sum
+        for (i in arr) {
+            temp_sum = 0;
+            for (j in arr) if (i != j) temp_sum += arr[j];
+            if (max < temp_sum || !max) max = temp_sum;
+            if (min > temp_sum || !min) min = temp_sum;
+        }
+        console.log(min, max)
+        return arr
+    }
+    minmaxsum([1,2,3,4,5])
+</script>

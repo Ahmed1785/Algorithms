@@ -1,0 +1,43 @@
+<script>
+    function Initialize(id, data){
+        if(!this.head){
+            this.head = new Node(id, data)
+            this.head.next = null;
+            this.tail = this.head;
+        }
+    }
+    Initialize.prototype.DeleteNode = function(val){
+        if (this.head.data === val) {
+        this.head = this.head.next;
+    } else {
+        var previousNode = this.head;
+        var currentNode = previousNode.next;
+        while (currentNode) {
+            if (currentNode.data === val) {
+                previousNode.next = currentNode.next;
+                currentNode = currentNode.next;
+                break;
+            } else {
+                previousNode = currentNode;
+                currentNode = currentNode.next;
+            }
+        }
+    }
+};
+
+
+    Initialize.prototype.RemoveDuplicates = function(Node){
+        buffer = {}
+        cur = this.head;
+        while(cur != null){
+            if(key in buffer){
+                self.DeleteNode(cur.id)
+            }else{
+                buffer[cur.id] - cur.data
+            }
+            cur = cur.next
+        }
+        return this;
+    }
+    
+</script>

@@ -1,0 +1,18 @@
+<script>
+    function fizzbuzz(arr){
+        for(var i = 0; i < arr.length; i++){
+            if(arr[i] % 3 == 0){
+                console.log("fizz")
+            }
+            if(arr[i] % 5 == 0){
+                console.log("buzz")
+            }
+            if(arr[i]%3 == 0 && arr[i]%5 == 0){
+                console.log("fizzbuzz")
+            }
+        }
+        console.log(arr);
+        return arr;
+    }
+    fizzbuzz([1,3,5,10,15,30,35])
+</script>

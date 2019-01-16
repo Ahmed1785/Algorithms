@@ -1,0 +1,27 @@
+<script>
+    function oneAway(str1, str2){
+        let edits = 1;
+        let maxLen = Math.max(s1.length, s2.length)
+        let diff = Math.abs(s1.length - s2.length)
+
+        if(diff > edits){
+            return false
+        }
+        for(var i = 0, j = 0; i < maxLen || j < maxLen; i++, j++){
+            c1 = str1[i]
+            c2 = str2[j]
+            if(c1 != c2){
+                edits--
+                if(edits < 0){
+                    return false
+                }
+            if(c1 == str2[j + 1]){
+                j++
+            } else if(str1[i+1] == c2){
+                i++
+            }     
+            }
+        }
+        return true;
+    }
+</script>

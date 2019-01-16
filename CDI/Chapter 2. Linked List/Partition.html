@@ -1,0 +1,25 @@
+You want to create two separate linked list. One to hold all values less then x, and the other to hold all values greater than x
+You want to create a pointer for each linked list as well as a pointer for head. So in total, you'll have 5 pointers
+
+<script>
+    function Partition(self, head, x){
+        var less = new Node(val);
+        var more = new Node(val);
+        var curr1 = less;
+        var curr2 = more;
+        var cur = head;
+        while(cur){
+            if(head.val < x){
+                curr1.next = cur;
+                curr1 = curr1.next
+            }else{
+                curr2.next = cur; 
+                curr2 = curr2.next;
+            }
+            cur = cur.next;
+        }
+        curr2.next = null;
+        curr1.next = more.next;
+        return dummy1.next
+    }
+</script>

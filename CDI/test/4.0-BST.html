@@ -1,0 +1,39 @@
+<script>
+    function Node(val){
+        this.val = val;
+        this.left = null;
+        this.right = null;
+    }
+    function BinarySearchTree(){
+        this.root = null;
+    }
+    BinarySearchTree.prototype.push = function(val){
+        var root = this.root;
+        var newNode = new Node(val);
+        if(!this.root){
+            this.root = newNode;
+            return this.root;
+        }
+        var current = this.root;
+        while(current){
+            if(val < current.value){
+                if(!current.left){
+                    current.left = newNode;
+                } else {
+                    current = current.left;
+                }
+            } else {
+                if(!current.right){
+                    current.right = newNode;
+                    break;
+                } else {
+                    current = current.right;
+                }
+            }
+        }
+    }
+    var bst = new BinarySearchTree();
+    bst.push(3)
+    bst.push(1)
+    bst.push(5)
+</script>

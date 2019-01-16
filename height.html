@@ -1,0 +1,22 @@
+<script>
+    function height(arr){
+        count = 0;
+        highest = 0
+        for(var i = 0; i < arr.length; i++){
+            if(arr[i] > highest){
+                highest = arr[i]
+            }
+        }
+        for(var j = 0; j < arr.length; j++){
+            if(highest == arr[j]){
+                count++
+            }
+        }
+
+        console.log(highest)
+        console.log(count)
+        // console.log(arr)
+        return highest;
+    }
+    height([1,2,3,4,5])
+</script>

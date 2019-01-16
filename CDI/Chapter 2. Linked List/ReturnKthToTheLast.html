@@ -1,0 +1,37 @@
+<script>
+    function Sll(node){
+        this.val = val;
+        this.next = null
+    }
+    if(!this.head){
+        this.head = new Node(val)
+    }
+    Sll.prototype.GetNth = function(node, N){
+        var count; 
+        current = this.head;
+        while(current != null){
+            if(count == N){
+                return current;
+            }
+            count++
+            current = current.next
+        }
+    }
+</script>
+
+In order to get the Kth from the last, you pass in a node and K to the function as variables. 
+You have a count variable that increments for every node
+You check the count against the kth variable
+You return current
+
+
+
+
+
+
+
+
+
+
+
+

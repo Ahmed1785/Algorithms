@@ -1,0 +1,24 @@
+<script>
+    function LinkedList () {
+        this.head = null;
+    }
+    LinkedList.prototype.RemoveMiddleNode = function(val){
+        if(this.head == null){
+            return this
+        }
+        else if(this.head.next == null){
+            return this
+        }else{
+            var slow = this.head;
+            var fast = this.head;
+            var prev;
+            while(fast != null && fast.next != null){
+                fast = fast.next.next;
+                prev = slow
+                slow = slow.next;
+            }
+            prev.next = slow.next;
+            delete slow;
+        }
+    }
+</script>

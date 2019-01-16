@@ -1,0 +1,22 @@
+<script>
+    function urlify(str){
+        if(str.length == 1){
+            return str;
+        }
+        var newStr = ""
+        for(var i = 0; i < str.length; i++){
+            if(str[i] == " "){
+                newStr += "%20"
+            } else {
+                newStr += (str[i])
+            }
+        }
+        return newStr;
+    }
+    //console.log(urlify("Ahmed   Sheikh"))
+
+    function URLF(str){
+        return str.trim().replace(" ","%20")
+    }
+    console.log(URLF("Hello World"))
+</script>

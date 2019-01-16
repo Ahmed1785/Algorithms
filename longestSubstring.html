@@ -1,0 +1,29 @@
+<script>
+    function LSubstring(string){
+        var chars = string.split("")
+        var cur_char;
+        var str = ""
+        var longeststr = ""
+        var hash = {};
+        for(var i = 0; i < chars.length; i++){
+            cur_char = chars[i]
+            if(!hash[chars[i]]){
+                str += cur_char;
+                hash[chars[i]] = {index:i};
+            } else {
+                if(longeststr <= str){
+                    longeststr = str;
+                }
+                var prevdupeindex = hash[cur_char].index;
+                var str_fromprevdupe = string.substring(prevdupeindex + 1, i);
+                str = str_fromprevdupe + cur_char;
+                hash = {};
+                for(var j = prevdupeindex + 1; j < i; j++){
+                    hash[string.charAt(j)] = {index:j}
+                }
+            }
+        }
+        return longeststr.length > str.length ? longeststr : str;
+    }
+    console.log(LSubstring("Ahmedsheikh"))
+</script>

@@ -1,0 +1,21 @@
+<script>
+    function sortStack(arr){
+        var swap;
+        var n = arr.length-1;
+        var temp;
+        var x = arr;
+        do {
+            swap = false;
+            for(var i = 0; i < n; i++){
+                if(x[i] > x[i+1]){
+                    var temp = x[i+1];
+                    x[i+1] = x[i];
+                    x[i] = temp;
+                    swap = true;
+                }
+            }
+            n--;
+        } while(swap);
+        return true;
+    }
+</script>

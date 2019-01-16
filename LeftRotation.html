@@ -1,0 +1,23 @@
+<script>
+    // function leftRotation(arr){
+    //     temp = arr[0];
+    //     var i = temp;
+    //     for (i = 0; i < arr.length-1; i++)
+    //        arr[i] = arr[i+1];
+    //         arr[i] = temp;
+    //         console.log(arr)
+    // }
+    // leftRotation([1,2,3,4,5])
+
+
+
+    function leftRotation(arr, n){
+        for(var i = arr.length-1; i > 0; i--){
+            temp = arr[i-1]
+           arr[i-1] = arr[i];
+            arr[i] = temp;
+            console.log(arr)
+        }
+    }
+    leftRotation([1,2,3,4,5],2)
+</script>

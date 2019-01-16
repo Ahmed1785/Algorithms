@@ -1,0 +1,21 @@
+<script>
+    function rotateMatrix(matrix){
+        var l = matrix.length;
+        for(var i = 0; i < Math.floor(L/2); i++){
+            for(var j = 0; j < l - (i*2) - 1; j++){
+                var temp = matrix[i+j][l-1-i]
+                matrix[i+j][l-i-j] = matrix[i][i+j]
+                matrix[i][i+j] = temp
+
+                temp = matrix[l-1-i][l-1-i-j]
+                matrix[l-1-i][l-1-i-j] = matrix[i][i+j]
+                matrix[i][i+j] = temp
+
+                temp = matrix[i][l-1-i]
+                matrix[l-1-i][i] = matrix[i][i+j]
+                matrix[i][i+j] = temp;
+            }
+        }
+        return matrix
+    }
+</script>

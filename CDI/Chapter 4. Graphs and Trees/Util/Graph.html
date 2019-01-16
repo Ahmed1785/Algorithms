@@ -1,0 +1,81 @@
+<script>
+    function Graph(){
+        this.nodes = {}
+    }
+    Graph.prototype.addEdge = function(node, edge){
+        if(this.nodes[node] == undefined){
+            return "this node doesn't exist"
+        } else if(this.nodes[node][edge]){
+            return "this $node - $edge already exists"
+        } else {
+            this.nodes[node][edge] = true;
+        }
+    }
+
+    "---------------------------------------------------------"
+
+    Graph.prototype.addNode = function(value){
+        if(this.nodes[node] == undefined){
+            return "this node doesn't exist"
+        } else {
+            this.nodes[value] = {}
+        }
+    }
+
+    "---------------------------------------------------------"
+
+    Graph.prototype.findEdges = function(node, edge){
+        if(this.nodes[node] == undefined){
+            return "this node doesn't exist"
+        } else {
+            return this.nodes[node]
+        }
+    }
+
+    "---------------------------------------------------------"
+
+    Graph.prototype.hasEdge = function(node, edge) {
+        if(this.nodes[node] == undefined){
+            return "this node doesn't exist"
+        } else {
+            return this.nodes[node] !== undefined;
+        }
+    }
+
+    "---------------------------------------------------------"
+
+    Graph.prototype.hasNode = function(node){
+        if(this.nodes[node] == undefined){
+            return "this node doesn't exist"
+        } else {
+           return this.nodes[node] !== undefined;
+        }
+    }
+
+    "---------------------------------------------------------"
+
+    Graph.prototype.removeEdge = function(node, edge) {
+  if (this.nodes[node] === undefined) {
+    return 'node does not exist';
+  } else {
+    delete this.nodes[node][edge];
+  }
+};
+
+    "---------------------------------------------------------"
+
+Graph.prototype.removeNode = function(node) {
+  if (this.nodes[node] === undefined) {
+    return 'node does not exist';
+  } else {
+    delete this.nodes[node];
+    for (var currNode in this.nodes) {
+      if (this.nodes[currNode][node] !== undefined) {
+        delete this.nodes[currNode][node];
+      }
+    }
+  }
+};
+
+module.exports = Graph;
+</script>

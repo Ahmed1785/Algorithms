@@ -1,0 +1,39 @@
+<script>
+    function BST(){
+        this.root = null;
+    }
+    function Node(data){
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
+    BST.prototype.insert = function(data){
+        var newNode = new Node(data)
+        if(this.root == null){
+            this.root = newNode;
+        } else {
+            this.inserNode(this.root, newNode)
+        }
+    }
+    BST.prototype.inserNode = function(node, newNode){
+        if(newNode.data < data){
+            if(node.left == null){
+                node.left = newNode
+            } else {
+                this.inserNode(node.left, newNode)
+            }
+        } else {
+            if(node.right == null){
+                node.right = newNode
+            } else {
+                this.inserNode(node.right, newNode)
+            }
+        }
+    }
+    BST.prototype.remove = function(data){
+        this.root = this.removeNode(this.root, data)
+    }
+    BST.prototype.removeNode = function(node, key){
+        
+    }
+</script>

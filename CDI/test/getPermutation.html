@@ -1,0 +1,44 @@
+<script>
+    function permut(string){
+        if(string.length < 2) //This is our break condition
+            return string;
+        var permutations = [] //this is the array that's going to hold our permutations
+        
+        for(var i=0; i<string.length; i++){ //create a forloop
+            var char = string[i]
+
+            if(string.indexOf(char) != i) // This is to check if char was already used
+                continue;
+            
+            var remainingString = string.slice(0,i) + string.slice(i+1,string.length);
+            for (var subPermutation of permut(remainingString))
+                permutations.push(char + subPermutation)
+        }
+        return permutations;
+    }
+
+    var myStr = "AHMED";
+    permutations = permut(myStr)
+    for(permutation of permutations)
+        console.log(permutation)
+        console.log(permutations.length)
+</script>
+<script>
+    function permutation(str) {
+        if(str.length == 1){
+            return str;
+        }
+        var permArray = []
+        for(var i = 0; i < str.length; i++){
+            var char = str[i]
+            if(str[char] == i){
+                continue;
+            }
+
+            var otherstr = str.slice(0,i) + str.slice(i,str.length)
+            for(permu in permutation(otherstr))
+            permArray.push(char + permu)
+        }
+        return permArray;
+    }
+</script>

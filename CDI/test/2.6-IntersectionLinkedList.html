@@ -1,0 +1,57 @@
+<script>
+    function listNode(val){
+        this.val = val;
+        this.next = null;
+    }
+    function sll(){
+        this.head = null;
+    }
+    sll.prototype.getLength = function(node1, node2){
+        var larger;
+        var smaller; 
+        var diff = 0;
+        while(node1 || node2){
+            node1 = node1.next;
+            node2 = node2.next;
+            counter++;
+            if(node1.next == null){
+                larger = node2;
+                smaller = node1;
+                diff++
+            } 
+            if(node2.next == null){
+                larger = node1;
+                smaller = node2;
+                diff++
+            }
+        }
+        return diff;
+    }
+    sll.prototype.intersection = function(node1,node2){
+        var larger;
+        var smaller;
+        var diff;
+        var list1 = getLength(node1)
+        var list2 = getLength(node2)
+        var counter = 0;
+        if(list1 > list2){
+            larger = list1;
+            smaller = list2;
+        } else {
+            larger = list2; 
+            smaller = list1;
+        }
+        while(counter < diff){
+            larger = larger.next;
+            counter++
+        }
+        while(larger != smaller){
+            larger = larger.next;
+            smaller = smaller.next;
+            if(larger.next && smaller.next == null){
+                return false;
+            }
+        }
+        return larger;
+    }
+</script>

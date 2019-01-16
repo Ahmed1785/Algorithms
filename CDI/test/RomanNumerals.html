@@ -1,0 +1,22 @@
+<script>
+function romanNumeral(s) {
+    var hash = {
+        I: 1,
+        V: 5,
+        X: 10,
+        L: 50,
+        C: 100,
+        D: 500,
+        M: 1000
+    }
+    var answer = 0;
+    for(var b = 0; b < s.length; b++){
+        if(hash[s[b]] < hash[s[b+1]]){
+            answer += hash[s[b+1]] - hash[s[b]];
+        }
+        answer += hash[s[b]]
+    }
+    return answer;
+};
+console.log(romanNumeral("III"))
+</script>

@@ -1,0 +1,36 @@
+<script>
+    function SetofPlates(value){
+        var stack = new Stack()
+        if(value < 1){
+            return "A stack greater than one is needed"
+        } else {
+            this.value = value;
+        }
+    }
+    SetofPlates.prototype.push = function(item){
+        if(this.stack.isEmpty()){
+            this.stack.push(item)
+        }
+        else if(this.stack[stack.length].length >= this.value){
+            this.stack.push(item);
+        } else {
+            count = 0;
+            while(this.stack[stack.length].length <= this.value){
+                this.stack[stack.length-1].push(item[count])
+                count++
+            }
+        }
+    }
+    SetofPlates.prototype.pop = function(){
+        if(this.stack.length == 0){
+            return "Can't pop an empty stack"
+        } else {
+            var popped_data = this.stack[stack.length].length
+            if(this.stack[stack.length].length == 1){
+                this.stack[stack.length].pop()
+            } else {
+                this.stack[stack.length-1][stack.length-1].pop()
+            }
+        }
+    }
+</script>

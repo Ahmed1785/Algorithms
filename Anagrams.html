@@ -1,0 +1,53 @@
+<script>
+        function isAnagram (str1, str2) {
+            
+                if (str1.length !== str2.length) {
+                    return false;
+                }
+                
+                var sortStr1 = str1.split('').sort().join('');
+                var sortStr2 = str2.split('').sort().join('');
+
+                if(sortStr1 != sortStr2){
+                    return false
+                }else{
+                    console.log(sortStr1)
+                    console.log(sortStr2);
+                    return true
+                }
+        }
+
+
+
+            //     min1 = "";
+            //     for(var i = 0; i < str.length-1; i++){
+            //         for(var k = i+1; k < str.length-1; k++){
+            //             if(str[k] < str[i]){
+            //                 min1 += str[i];
+            //                 str[i] = str[k]
+            //                 str[k] = min1;
+            //             }
+            //             console.log(str)
+            //         }
+            //     }
+            //     console.log(str)
+            // }
+
+//             function sort(str) {
+//                 var sorted = str;
+//                 //Selection sort
+//                 for (var i = 0; i < str.length; i++) {
+//                     for(var j = i + 1; j < str.length - 1; j++) {   
+//                         if (str[i] < str[j]) {
+//                             str = swap(str, i, j)
+//                         }
+//                     }
+//                     console.log(str)
+//                 }
+//                 return str;
+//             }
+
+// sort("zaasfweqrouoicxzvjlmmknkniqwerpopzxcvdfaa");
+            
+            isAnagram('dog', "god")
+</script>

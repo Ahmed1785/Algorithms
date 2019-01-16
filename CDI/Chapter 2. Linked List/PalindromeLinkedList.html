@@ -1,0 +1,44 @@
+<script>
+    function Reverse(sll){
+        if(!sll.head || !sll.head.next){
+            return sll;
+        }
+        var tempstorage = []
+        var current = sll.head;
+        while(current){
+            tempstorage.push(current);
+            current = current.next;
+        }
+        var reversedsll = new sll;
+        reversedsll.head = tempstorage.pop();
+        current = reversedsll.head;
+        var node = tempstorage.pop();
+        while(node){
+            node.next = null;
+            current.next = node;
+            current = current.next;
+            node = tempstorage.pop();
+        }
+        return reversedsll;
+    }
+
+    function palindrome(sll){
+        if(!sll.head || !sll.head.next){
+            return sll;
+        }
+        runner = sll.head;
+        current = sll.head;
+        while(1){
+            runner = runner.next.next;
+            if(runner.next == null){
+                start_second = current.next.next;
+            }
+            if(runner == null){
+                start_second = current.next;
+            }
+            current = current.next
+        }
+        current.next = null;
+        reversedsll(start_second);
+    }
+</script>

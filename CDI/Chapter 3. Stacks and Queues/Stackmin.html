@@ -1,0 +1,27 @@
+<script>
+    function StackMin(value){
+        this.stack = new Stack()
+        this.stackminn = new Stack()
+        this.curmin = curmin;
+    }
+    StackMin.prototype.push = function(value){
+        if(curmin == undefined || value <= curmin){
+            this.stackminn.push(curmin)
+            this.curmin = value
+        }
+        this.stack.push(value)
+    }
+    StackMin.prototype.pop = function(){
+        var answer = this.stack.pop()
+        if(answer === this.curmin){
+            this.curmin = this.StackMin.pop()
+        }
+        return answer;
+    }
+    StackMin.prototype.peek = function(){
+        return this.stack.peek()
+    }
+    StackMin.prototype.isEmpty = function(){
+        return this.stack.isEmpty()
+    }
+</script>

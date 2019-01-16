@@ -1,0 +1,27 @@
+<script>
+    function ReverseWords(str){
+        var k = 0;
+        var i = 0; 
+        var temp;
+        for(var j = 0; j < str.length; j++){
+            if(str[j] == " " || j == str.length-1){
+                if(j < str.length-1){
+                    k = j-1;
+                }else{
+                    k = j;
+                }
+            while(i < k){
+                temp = str[i];
+                str[i] = str[k];
+                str[k] = temp;
+                i++
+                k--
+            }
+            i = j+1
+        }
+    }
+    console.log(str)
+    return str
+    }
+    console.log(ReverseWords("Hello World"))
+</script>

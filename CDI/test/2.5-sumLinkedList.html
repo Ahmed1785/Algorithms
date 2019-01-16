@@ -1,0 +1,34 @@
+<script>
+    function listNode(val){
+        this.val = val;
+        this.next = null;
+    }
+    function sll(){
+        this.head = null;
+    }
+    sll.prototype.sumList = function(list1, list2, carry){
+        var results = new sll;
+        var l1 = list1;
+        var l2 = list2; 
+        var carry = 0;
+        var cur = results
+        while(l1 || l2 || carry !== 0){
+            var sum = carry;
+            if(l1){
+                sum += l1.value;
+                l1 = l1.next;
+            }
+            if(p2){
+                sum += l2.value;
+                l2 = l2.next;
+            }
+            cur.value = sum % 10;
+            carry = sum / 10;
+            if(l1 || l2 || carry !== 0){
+                cur.next = new listNode(val)
+                cur = cur.next;
+            }
+        }
+        return results;
+    }
+</script>

@@ -1,0 +1,29 @@
+*//
+if you want to remove duplicates, you create a hash table, and you check if that key already exists. If so, you delete the key
+
+<script>
+    function listNode(val){
+        this.val = val;
+        this.next = null;
+    }
+    function sll() {
+        this.head = null;
+    }
+    sll.prototype.removeDups() = function(val){
+        if(!this.head || !this.head.next){
+            return this.head;
+        }
+        var cur = this.head;
+        var hash = {}
+        while(cur.next){
+            cur = cur.next;
+            if(hash[cur] !== "undefined"){
+                cur = cur.next.next;
+            } else {
+                hash[cur] = cur.val;
+            }
+        }
+        return hash;
+    }
+    
+</script>

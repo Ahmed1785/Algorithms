@@ -1,0 +1,48 @@
+<script>
+    function listNode(val){
+        this.val = val;
+        this.next = null;
+    }
+    function sll(){
+        this.head = null;
+    }
+    sll.prototype.reverseLinkedList = function(head){
+        if(!this.head.next){
+            return this;
+        }
+        var newHead = head;
+        var oldHead = head.next;
+        while(oldHead){
+            var current = oldHead;
+            oldHead = oldHead.next;
+            current.next = newHead;
+            newHead = current;
+        }
+        return newHead;
+    }
+    sll.prototype.palindrome = function(head){
+        if(!this.head.next.next){
+            return true;
+        }
+        var fast = head;
+        var slow = head;
+        while(head){
+            fast = head.next.next;
+            if(fast.next == null){
+                secondList = slow.next.next;
+                break;
+            }
+            if(fast == null){
+                secondList = slow.next;
+            }
+            slow = slow.next
+        }
+        slow.next = null;
+        reverseLinkedList(secondList);
+        if(secondList.head == head.head){
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>

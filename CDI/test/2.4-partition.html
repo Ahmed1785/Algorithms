@@ -1,0 +1,29 @@
+<script>
+    function listNode(val){
+        this.val = val;
+        this.next = null;
+    }
+    function sll() {
+        this.head = null;
+    }
+    sll.prototype.partition = function(node, number){
+        var less = new listNode(val);
+        var more = new listNode(val)
+        var lesspointer = less;
+        var morepointer = more;
+        var cur = this.head;
+        while(cur){
+            if(cur.val < number){
+                lesspointer = cur;
+                lesspointer = lesspointer.next;
+            } else {
+                morepointer = cur;
+                morepointer = morepointer.next;
+            }
+            cur = cur.next;
+        }
+        morepointer.next = null;
+        lesspointer.next = morepointer.next;
+        return less.next;
+    }
+</script>

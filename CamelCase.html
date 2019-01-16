@@ -1,0 +1,13 @@
+<script>
+    function CamelCase(str){
+        count = 1;
+        for(var i = 0; i < str.length-1; i++){
+            if(str[i] == str[i].toUpperCase()){
+                count++
+            }
+        }
+        console.log(count)
+        return str
+    }
+    CamelCase("thisIsJustTest")
+</script>

@@ -1,0 +1,29 @@
+<script>
+    function compression(str) {
+        var count = 1;
+        var previousChar = str.charAt(0);
+        var compressedStr = '';
+        var strLength = str.length;
+
+        for (var i = 1; i < strLength; i++) {
+            var currentChar = str[i];
+            if(previousChar === currentChar) {
+                count++;
+            } else if (count === 1) {
+                compressedStr += previousChar;
+                previousChar = currentChar;
+            } else {
+                compressedStr += previousChar + count;
+                previousChar = currentChar;
+                count = 1;
+            }
+        }
+        if (count === 1) {
+            compressedStr += currentChar;
+        } else {
+            compressedStr += currentChar + count;
+        }
+        return compressedStr;
+    }
+    console.log(compression("heeellllllllllooooooooooooooooooo"))
+</script>

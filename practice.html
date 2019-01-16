@@ -1,0 +1,26 @@
+<script>
+    // function power(num, square){
+    //     val = 1;
+    //     if(num == 0){
+    //         return false
+    //     }
+    //     while(square > 0){
+    //         val *= num
+    //         square--
+    //     }
+    //     return val;
+    // }
+    // console.log(power(2,3))
+
+    function power(num, square, val=1){
+        if(num == 0){
+            return false
+        }
+        // console.log("square", square)
+        if(square == 0){
+            return val;
+        }
+        return power(num, square-=1, val*= num)
+    }
+    console.log(power(2,3))
+</script>
